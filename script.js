@@ -27,9 +27,9 @@
 
 
   var au=document.getElementById('audio'),mb=document.getElementById('music');
-  au.src='music.mp3';
-  function startMusic(){ au.play().catch(function(){}); if(mb) mb.hidden=false; }
-  if(mb) mb.addEventListener('click',function(){var m=!au.muted;au.muted=m;mb.setAttribute('aria-pressed',m);mb.setAttribute('aria-label',m?'Unmute music':'Mute music');if(!m&&au.paused)au.play().catch(function(){});});
+  fetch('assets/music.mp3',{method:'HEAD'}).then(function(r){if(r.ok){au.src='assets/music.mp3';mb.hidden=false;}}).catch(function(){});
+  function startMusic(){ if(au.src&&!mb.hidden) au.play().catch(function(){}); }
+  mb.addEventListener('click',function(){var m=!au.muted;au.muted=m;mb.setAttribute('aria-pressed',m);mb.setAttribute('aria-label',m?'Unmute music':'Mute music');if(!m&&au.paused)au.play().catch(function(){});});
   var T=new Date('2027-01-09T14:30:00+05:30').getTime(),p=function(n){return String(n).padStart(2,'0')};
   function tick(){var s=Math.floor(Math.max(0,T-Date.now())/1e3);
     document.getElementById('d').textContent=p(Math.floor(s/86400));document.getElementById('h').textContent=p(Math.floor(s%86400/3600));
