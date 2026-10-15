@@ -17,7 +17,7 @@
 }
 *,*::before,*::after{box-sizing:border-box}
 [hidden]{display:none!important}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;background:#06170c}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;background:#06170c url("assets/backdrop.webp") center top/cover no-repeat fixed}
 html,body{margin:0;padding:0;max-width:100%}
 body{overflow-x:hidden}
 html.is-locked,html.is-locked body{overflow:hidden}
