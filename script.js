@@ -48,11 +48,51 @@
   root.classList.add('is-locked');
   if ('inert' in main) main.inert = true;
 
+  /* ---- Background music --------------------------------------------- */
+  var bgMusic = document.getElementById('bgMusic');
+  var musicToggle = document.getElementById('musicToggle');
+  var iconSound = musicToggle && musicToggle.querySelector('.icon-sound');
+  var iconMute  = musicToggle && musicToggle.querySelector('.icon-mute');
+  var musicStarted = false;
+
+  function startMusic() {
+    if (!bgMusic || musicStarted) return;
+    musicStarted = true;
+    bgMusic.volume = 0.5;
+    var promise = bgMusic.play();
+    if (promise !== undefined) {
+      promise.catch(function () { /* autoplay blocked — user can unmute manually */ });
+    }
+    if (musicToggle) musicToggle.style.display = 'flex';
+  }
+
+  if (musicToggle) {
+    musicToggle.style.display = 'none'; // hidden until music starts
+    musicToggle.addEventListener('click', function () {
+      if (!bgMusic) return;
+      if (bgMusic.paused) {
+        bgMusic.play();
+        iconSound.style.display = '';
+        iconMute.style.display  = 'none';
+        musicToggle.setAttribute('aria-label', 'Mute music');
+        musicToggle.title = 'Mute music';
+      } else {
+        bgMusic.pause();
+        iconSound.style.display = 'none';
+        iconMute.style.display  = '';
+        musicToggle.setAttribute('aria-label', 'Unmute music');
+        musicToggle.title = 'Unmute music';
+      }
+    });
+  }
+
   var opened = false;
   function openInvitation(e) {
     if (e) e.preventDefault();
     if (opened) return;
     opened = true;
+
+    startMusic();
 
     window.scrollTo(0, 0);
     if ('inert' in main) main.inert = false;

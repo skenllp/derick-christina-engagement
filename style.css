@@ -606,3 +606,35 @@ main:focus { outline: none; }
   .divider b { transform: rotate(45deg) !important; }
   .js .panel--reception::after, .js .panel--closing::after { opacity: 0 !important; transition: none; }
 }
+
+/* ============================================================
+   MUSIC TOGGLE
+   ============================================================ */
+.music-toggle {
+  position: fixed;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255,255,255,0.35);
+  background: rgba(62, 8, 18, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #f5e6c8;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.35);
+}
+.music-toggle:hover {
+  background: rgba(62, 8, 18, 0.92);
+  transform: scale(1.08);
+}
+.music-toggle:focus-visible {
+  outline: 2px solid #f5e6c8;
+  outline-offset: 3px;
+}
