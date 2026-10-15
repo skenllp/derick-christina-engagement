@@ -45,6 +45,7 @@
 
   function finish() {
     scene.hidden = true;
+    root.classList.add('opened');
     root.classList.remove('is-locked');
     doc.removeAttribute('aria-hidden');
     window.scrollTo(0, 0);

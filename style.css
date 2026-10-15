@@ -1,7 +1,7 @@
 /* ============================================================
    Derick & Christina — Engagement Invitation (letter opening)
    Scene: sealed envelope -> flap opens -> letter rises -> letter fills screen.
-   Letter: two 9:16 ivory pages (assets/letter.webp), type sized in cqw so
+   Letter: two 9:16 ivory pages (assets/cards/wedding.webp), type sized in cqw so
    the layout is identical at 360px, 430px and desktop.
    ============================================================ */
 :root{
@@ -49,7 +49,7 @@ body{min-height:100vh;color:var(--brown);font-family:var(--f-body);font-size:17p
 .env__back{position:absolute;inset:0;z-index:1;border-radius:3px;background:url("assets/liner.webp") center/300px,#FFF5E8;box-shadow:0 26px 50px rgba(0,0,0,.55),0 4px 10px rgba(0,0,0,.4)}
 .env__letter{
   position:absolute;z-index:2;left:5%;width:90%;top:14%;height:84%;
-  background:url("assets/letter.webp") top center/100% auto no-repeat #FFF5E8;
+  background:url("assets/cards/wedding.webp") top center/100% auto no-repeat #FFF5E8;
   box-shadow:0 -2px 10px rgba(0,0,0,.18);
   transition:transform 1.05s cubic-bezier(.4,.1,.2,1);
 }
@@ -99,7 +99,7 @@ body{min-height:100vh;color:var(--brown);font-family:var(--f-body);font-size:17p
 .scene.is-flying .env,.scene.is-flying .scene__top{opacity:0;transition:opacity .9s ease .1s}
 
 /* letter that flies from the envelope to full page */
-.fly{position:fixed;z-index:120;background:url("assets/letter.webp") top center/100% auto no-repeat #FFF5E8;box-shadow:0 20px 60px rgba(0,0,0,.45);transition:left 1.05s cubic-bezier(.5,0,.2,1),top 1.05s cubic-bezier(.5,0,.2,1),width 1.05s cubic-bezier(.5,0,.2,1),height 1.05s cubic-bezier(.5,0,.2,1)}
+.fly{position:fixed;z-index:120;background:url("assets/cards/wedding.webp") top center/100% auto no-repeat #FFF5E8;box-shadow:0 20px 60px rgba(0,0,0,.45);transition:left 1.05s cubic-bezier(.5,0,.2,1),top 1.05s cubic-bezier(.5,0,.2,1),width 1.05s cubic-bezier(.5,0,.2,1),height 1.05s cubic-bezier(.5,0,.2,1)}
 
 @keyframes fade{from{opacity:0}to{opacity:1}}
 @keyframes envIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
@@ -110,7 +110,7 @@ body{min-height:100vh;color:var(--brown);font-family:var(--f-body);font-size:17p
 .page{container-type:inline-size;position:relative;aspect-ratio:941/1672;background-size:100% 100%;background-repeat:no-repeat;margin:0 0 4vw;box-shadow:0 20px 50px rgba(0,0,0,.45);overflow:hidden}
 .pi{height:100%;width:72cqw;margin:0 auto;padding:var(--pt) 0 var(--pb);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:var(--ink)}
 .pi>*{margin:0}.pi>*+*{margin-top:var(--g,2.2cqw)}
-.cover{background-image:url(assets/letter.webp);--ink:#4a3028;--acc:#8a6a3a;--pt:14cqw;--pb:14cqw;--g:3cqw}
+.cover{background-image:url(assets/cards/wedding.webp);--ink:#4a3028;--acc:#a07c34;--pt:41cqw;--pb:25cqw;--g:2.4cqw}.cover .tt.sc{font-size:10.5cqw}
 .eng{background-image:url(assets/cards/engagement.webp);--ink:#f3e6cf;--acc:#e4c283;--pt:36cqw;--pb:24cqw;--g:2.4cqw}
 .cok{background-image:url(assets/cards/cocktail.webp);--ink:#e8dcc0;--acc:#d8b36a;--pt:37cqw;--pb:25cqw;--g:2.2cqw}
 .mad{background-image:url(assets/cards/madhuramveppu.webp);--ink:#4a2f14;--acc:#8a6420;--pt:43cqw;--pb:33cqw;--g:1.8cqw;--ts:7.2cqw}
@@ -142,3 +142,13 @@ body{min-height:100vh;color:var(--brown);font-family:var(--f-body);font-size:17p
 
 .count{--ink:#f3e6cf;--acc:#d9bc82;display:flex;flex-direction:column;align-items:center;gap:12px;padding:12vw 8vw 22vw;color:var(--ink)}.count .cd{margin:6px 0 26px}
 .count .tt.sc{font-size:clamp(40px,12vw,56px);color:#f1dcae}.count .sb{font-size:20px}.count .wd{font-size:17px;max-width:30ch;margin:0}.count .nm{font-size:clamp(34px,10vw,44px);color:#f1dcae}.count .lb{font-size:11px}.count .dv{width:140px}.count>*{margin-top:0}
+
+html.opened{background:#efe6d2 url(assets/envelope.webp) center/700px}html.opened .backdrop{display:none}
+.count{--ink:#4a3028;--acc:#a07c34;color:var(--ink)}.count .lb{color:#a07c34}.count .cd b{color:#a07c34}.count .tt.sc,.count .nm{color:#a07c34}.count .cd span{color:#4a3028}
+.page{margin:0!important;box-shadow:none!important}
+.doc{box-shadow:0 0 40px rgba(60,40,10,.25)}
+@media(min-width:520px){.doc{box-shadow:0 0 60px rgba(60,40,10,.3)}}
+.js .page.reveal{opacity:1;transform:none;transition:none}
+.js .page.reveal .pi{opacity:0;transform:translateY(16px);transition:opacity 1s ease,transform 1s ease}
+.js .page.reveal.is-visible .pi{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .page.reveal .pi{opacity:1;transform:none;transition:none}}
