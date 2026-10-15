@@ -1,13 +1,3 @@
-# Derick Mathew & Christina Cherian — Engagement Invitation (letter opening)
-
-Files: `index.html`, `style.css`, `script.js`, `assets/`.
-
-Flow: sealed envelope -> tap the gold seal -> flap opens -> letter rises -> letter fills the screen (two ivory pages).
-A "Skip" link goes straight to the letter; reduced-motion visitors also skip the animation. Without JavaScript the letter is shown directly.
-
-Assets: `backdrop.webp` (page), `envelope.webp` (envelope paper), `liner.webp` (inside flap/envelope), `seal.png` (wax seal, transparent),
-`letter.webp` (letter pages), `og-image.jpg` (link preview).
-
-Social preview: after hosting, change `og:image` in `index.html` to the full URL (https://YOUR-DOMAIN/assets/og-image.jpg) and add `twitter:image`.
-Preview locally: run `python3 -m http.server` in this folder and open http://localhost:8000
-No reception time is shown (none was provided).
+# Derick & Christina — Four Celebrations
+Static site. Deploy the folder; replace `YOUR-DOMAIN` in the og/twitter image tags. Optional: add `assets/music.mp3`.
+Each card is a 9:16 page (941x1672 artwork); text is sized in cqw. Safe text zones per card = `--pt`/`--pb` in style.css.

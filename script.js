@@ -16,14 +16,25 @@
   var started = false;
   function startReveals() {
     if (started) return; started = true;
-    var targets = Array.prototype.slice.call(document.querySelectorAll('.reveal, .names'));
+    var targets = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
     function show(el) { el.classList.add('is-visible'); }
     if (!('IntersectionObserver' in window)) { targets.forEach(show); return; }
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) { if (e.isIntersecting) { show(e.target); io.unobserve(e.target); } });
-    }, { threshold: 0.2, rootMargin: '0px 0px -6% 0px' });
+    }, { threshold: 0.12, rootMargin: '0px 0px -4% 0px' });
     targets.forEach(function (el) { io.observe(el); });
   }
+
+
+  var au=document.getElementById('audio'),mb=document.getElementById('music');
+  fetch('assets/music.mp3',{method:'HEAD'}).then(function(r){if(r.ok){au.src='assets/music.mp3';mb.hidden=false;}}).catch(function(){});
+  function startMusic(){ if(au.src&&!mb.hidden) au.play().catch(function(){}); }
+  mb.addEventListener('click',function(){var m=!au.muted;au.muted=m;mb.setAttribute('aria-pressed',m);mb.setAttribute('aria-label',m?'Unmute music':'Mute music');if(!m&&au.paused)au.play().catch(function(){});});
+  var T=new Date('2027-01-09T14:30:00+05:30').getTime(),p=function(n){return String(n).padStart(2,'0')};
+  function tick(){var s=Math.floor(Math.max(0,T-Date.now())/1e3);
+    document.getElementById('d').textContent=p(Math.floor(s/86400));document.getElementById('h').textContent=p(Math.floor(s%86400/3600));
+    document.getElementById('m').textContent=p(Math.floor(s%3600/60));document.getElementById('s').textContent=p(s%60);}
+  tick();setInterval(tick,1000);
 
   if (!scene || !doc || !sealBtn) { startReveals(); return; }
 
@@ -48,6 +59,7 @@
 
   function open(skip) {
     if (opened) return; opened = true;
+    startMusic();
     if (skip || reduce) { showDoc(); finish(); return; }
 
     scene.classList.add('is-opening');                       // seal fades, flap swings open
