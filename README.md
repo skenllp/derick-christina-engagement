@@ -1,23 +1,13 @@
-# Derick Mathew & Christina Cherian — Engagement Invitation
+# Derick Mathew & Christina Cherian — Engagement Invitation (letter opening)
 
-Five-section invitation: `index.html`, `style.css`, `script.js`, `assets/`. No build step.
+Files: `index.html`, `style.css`, `script.js`, `assets/`.
 
-## Sections and backgrounds
-1. Opening screen (`.opening`) – `assets/opening-bg.webp` – "Open Invitation" fades into the invitation in 1.1s
-2. Verse, parents, couple names (`.panel--family`) – `assets/family-bg.webp`
-3. Engagement ceremony (`.panel--ceremony`) – `assets/ceremony-bg.webp`
-4. Reception (`.panel--reception`) – `assets/reception-bg.webp`
-5. Closing (`.panel--closing`) – `assets/closing-bg.webp`
+Flow: sealed envelope -> tap the gold seal -> flap opens -> letter rises -> letter fills the screen (two ivory pages).
+A "Skip" link goes straight to the letter; reduced-motion visitors also skip the animation. Without JavaScript the letter is shown directly.
 
-Each section is a 9:16 box matching its 941x1672 image, so artwork is never stretched or cropped.
-Type is sized in `cqw` (relative to the section width) so layout is identical at 360px, 430px and desktop.
-To swap an image, keep the same 9:16 proportions and file name.
+Assets: `backdrop.webp` (page), `envelope.webp` (envelope paper), `liner.webp` (inside flap/envelope), `seal.png` (wax seal, transparent),
+`letter.webp` (letter pages), `og-image.jpg` (link preview).
 
-## Social preview (Open Graph)
-`assets/og-image.jpg` (1200x630) is included. Social apps need an absolute URL, so after hosting
-change `content="assets/og-image.jpg"` in `index.html` to `https://YOUR-DOMAIN/assets/og-image.jpg`
-and add the same for `twitter:image`.
-
-## Preview locally
-`python3 -m http.server` in this folder, then open http://localhost:8000
-Fonts load from Google Fonts (fallback to system serif if offline).
+Social preview: after hosting, change `og:image` in `index.html` to the full URL (https://YOUR-DOMAIN/assets/og-image.jpg) and add `twitter:image`.
+Preview locally: run `python3 -m http.server` in this folder and open http://localhost:8000
+No reception time is shown (none was provided).
