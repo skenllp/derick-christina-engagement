@@ -144,11 +144,11 @@ body{min-height:100vh;color:var(--brown);font-family:var(--f-body);font-size:17p
 .count{--ink:#f3e6cf;--acc:#d9bc82;display:flex;flex-direction:column;align-items:center;gap:12px;padding:12vw 8vw 22vw;color:var(--ink)}.count .cd{margin:6px 0 26px}
 .count .tt.sc{font-size:clamp(40px,12vw,56px);color:#f1dcae}.count .sb{font-size:20px}.count .wd{font-size:17px;max-width:30ch;margin:0}.count .nm{font-size:clamp(34px,10vw,44px);color:#f1dcae}.count .lb{font-size:11px}.count .dv{width:140px}.count>*{margin-top:0}
 
-html.opened{background:#efe6d2 url(assets/envelope.webp) center/700px}html.opened .backdrop{display:none}
+html.opened{background:radial-gradient(ellipse at 50% 30%,#6e1220 0%,#4a0a15 55%,#2e060d 100%) fixed #4a0a15}html.opened .backdrop{display:none}
 .count{--ink:#4a3028;--acc:#a07c34;color:var(--ink)}.count .lb{color:#a07c34}.count .cd b{color:#a07c34}.count .tt.sc,.count .nm{color:#a07c34}.count .cd span{color:#4a3028}
 .page{margin:0!important;box-shadow:none!important}
-.doc{box-shadow:0 0 40px rgba(60,40,10,.25)}
-@media(min-width:520px){.doc{box-shadow:0 0 60px rgba(60,40,10,.3)}}
+.doc{box-shadow:0 0 40px rgba(0,0,0,.45)}
+@media(min-width:520px){.doc{box-shadow:0 0 60px rgba(0,0,0,.5)}}
 .js .page.reveal{opacity:1;transform:none;transition:none}
 .js .page.reveal .pi{opacity:0;transform:translateY(16px);transition:opacity 1s ease,transform 1s ease}
 .js .page.reveal.is-visible .pi{opacity:1;transform:none}
