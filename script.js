@@ -29,7 +29,17 @@
   var au=document.getElementById('audio'),mb=document.getElementById('music');
   au.src='assets/music.mp3';
   mb.hidden=false;
-  function startMusic(){ au.play().catch(function(){}); }
+  var musicOn=false;
+  function startMusic(){
+    if(musicOn) return;
+    var pr=au.play();
+    if(pr&&pr.then){pr.then(function(){musicOn=true;unbind();}).catch(function(){});}else{musicOn=true;unbind();}
+  }
+  /* Browsers block sound until the visitor interacts, so try on load, then on the very first tap/click/key/scroll */
+  var evs=['pointerdown','touchstart','touchend','click','keydown','wheel','scroll'];
+  function unbind(){evs.forEach(function(e){window.removeEventListener(e,startMusic,true);});}
+  evs.forEach(function(e){window.addEventListener(e,startMusic,{capture:true,passive:true});});
+  startMusic();
   mb.addEventListener('click',function(){var m=!au.muted;au.muted=m;mb.setAttribute('aria-pressed',m);mb.setAttribute('aria-label',m?'Unmute music':'Mute music');if(!m&&au.paused)au.play().catch(function(){});});
   var T=new Date('2027-01-09T14:30:00+05:30').getTime(),p=function(n){return String(n).padStart(2,'0')};
   function tick(){var s=Math.floor(Math.max(0,T-Date.now())/1e3);
