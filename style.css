@@ -145,6 +145,7 @@ body{min-height:100vh;color:var(--brown);font-family:var(--f-body);font-size:17p
 .count .tt.sc{font-size:clamp(40px,12vw,56px);color:#f1dcae}.count .sb{font-size:20px}.count .wd{font-size:17px;max-width:30ch;margin:0}.count .nm{font-size:clamp(34px,10vw,44px);color:#f1dcae}.count .lb{font-size:11px}.count .dv{width:140px}.count>*{margin-top:0}
 
 html.opened{background:#5e0a14 url(assets/maroon-bg.webp) center top/600px repeat}html.opened .backdrop{display:none}
+.count{--ink:#4a3028;--acc:#a07c34;color:var(--ink)}.count .lb{color:#a07c34}.count .cd b{color:#a07c34}.count .tt.sc,.count .nm{color:#a07c34}.count .cd span{color:#4a3028}
 .page{margin:0!important;box-shadow:none!important}
 .doc{box-shadow:0 0 40px rgba(0,0,0,.45)}
 @media(min-width:520px){.doc{box-shadow:0 0 60px rgba(0,0,0,.5)}}
@@ -185,4 +186,4 @@ html.opened{background:#5e0a14 url(assets/maroon-bg.webp) center top/600px repea
 .eng.ev{--ink:#f1e4cc;--acc:#e2c288;--pt:50cqw;--pb:28cqw}
 .cok.ev{--ink:#eadfc8;--acc:#d9bc82;--pt:45cqw;--pb:32cqw}
 .mad.ev{--ink:#4a3118;--acc:#8a6420;--pt:49cqw;--pb:32cqw}
-.wed.ev{--ink:#4a3028;--acc:#a07c34;--pt:46cqw;--pb:32cqw}
+.wed.ev{--ink:#5a3b36;--acc:#8f6334;--pt:46cqw;--pb:32cqw}
