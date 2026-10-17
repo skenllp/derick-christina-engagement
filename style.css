@@ -74,7 +74,7 @@ body{min-height:100vh;color:var(--brown);font-family:var(--f-body);font-size:17p
 .face--out::after{content:"";position:absolute;inset:0;background:linear-gradient(to top right,transparent calc(50% - .6px),rgba(217,188,130,.75) 50%,transparent calc(50% + .6px)) 0 0/50% 100% no-repeat,linear-gradient(to top left,transparent calc(50% - .6px),rgba(217,188,130,.75) 50%,transparent calc(50% + .6px)) 100% 0/50% 100% no-repeat}
 
 .seal{
-  position:absolute;z-index:6;left:50%;top:52%;width:21%;aspect-ratio:1;
+  position:absolute;z-index:6;left:50%;top:52%;width:25%;aspect-ratio:1;
   transform:translate(-50%,-52%);
   padding:0;border:0;background:none;cursor:pointer;border-radius:50%;
   filter:drop-shadow(0 6px 10px rgba(0,0,0,.55));
@@ -180,8 +180,10 @@ html.opened{background:#5e0a14 url(assets/maroon-bg.webp) center top/600px repea
 .wed.ev{--pt:44cqw;--pb:30cqw}
 .eng.ev .dt{margin-top:.6cqw}
 
-/* Cocktail: champagne glasses at the foot, richer velvet-black */
-.cok .gl{display:block;width:25cqw;height:auto;margin-top:4cqw}
-.cok.ev{background-color:#070707}
-.cok.ev::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse 75% 40% at 50% 34%,rgba(150,115,55,.13),transparent 72%),radial-gradient(ellipse 120% 60% at 50% 100%,rgba(0,0,0,.35),transparent 70%)}
-.cok .pi{position:relative;z-index:1}
+/* ===== New palette: dusty burgundy / rich black / antique champagne / dusty mauve-ivory (arched 2:3 artwork, 3-part backgrounds) ===== */
+.page.ev .pi{min-height:150cqw}
+.page.eng.ev .pi{min-height:177.7cqw}
+.eng.ev{--ink:#f1e4cc;--acc:#e2c288;--pt:50cqw;--pb:28cqw}
+.cok.ev{--ink:#eadfc8;--acc:#d9bc82;--pt:45cqw;--pb:32cqw}
+.mad.ev{--ink:#4a3118;--acc:#8a6420;--pt:49cqw;--pb:32cqw}
+.wed.ev{--ink:#5a3b36;--acc:#8f6334;--pt:46cqw;--pb:32cqw}
