@@ -145,7 +145,7 @@ body{min-height:100vh;color:var(--brown);font-family:var(--f-body);font-size:17p
 .count .tt.sc{font-size:clamp(40px,12vw,56px);color:#f1dcae}.count .sb{font-size:20px}.count .wd{font-size:17px;max-width:30ch;margin:0}.count .nm{font-size:clamp(34px,10vw,44px);color:#f1dcae}.count .lb{font-size:11px}.count .dv{width:140px}.count>*{margin-top:0}
 
 html.opened{background:#5e0a14 url(assets/maroon-bg.webp) center top/600px repeat}html.opened .backdrop{display:none}
-.count{--ink:#f3e6cf;--acc:#d9bc82;color:var(--ink)}.count .lb{color:#d9bc82}.count .cd b{color:#f1dcae}.count .tt.sc,.count .nm{color:#f1dcae}.count .cd span{color:#f3e6cf}
+.count{--ink:#4a3028;--acc:#a07c34;color:var(--ink)}.count .lb{color:#a07c34}.count .cd b{color:#a07c34}.count .tt.sc,.count .nm{color:#a07c34}.count .cd span{color:#4a3028}
 .page{margin:0!important;box-shadow:none!important}
 .doc{box-shadow:0 0 40px rgba(0,0,0,.45)}
 @media(min-width:520px){.doc{box-shadow:0 0 60px rgba(0,0,0,.5)}}
@@ -180,10 +180,12 @@ html.opened{background:#5e0a14 url(assets/maroon-bg.webp) center top/600px repea
 .wed.ev{--pt:44cqw;--pb:30cqw}
 .eng.ev .dt{margin-top:.6cqw}
 
-/* ===== New palette: dusty burgundy / rich black / antique champagne / dusty mauve-ivory (arched 2:3 artwork, 3-part backgrounds) ===== */
-.page.ev .pi{min-height:150cqw}
-.page.eng.ev .pi{min-height:177.7cqw}
-.eng.ev{--ink:#f1e4cc;--acc:#e2c288;--pt:50cqw;--pb:28cqw}
-.cok.ev{--ink:#eadfc8;--acc:#d9bc82;--pt:45cqw;--pb:32cqw}
-.mad.ev{--ink:#4a3118;--acc:#8a6420;--pt:49cqw;--pb:32cqw}
-.wed.ev{--ink:#5a3b36;--acc:#8f6334;--pt:46cqw;--pb:32cqw}
+/* ===== New palette: dusty burgundy / rich black / antique champagne / dusty mauve-ivory (arched 9:16 artwork, 3-part backgrounds) ===== */
+.page.ev .pi{min-height:177.7cqw}
+.eng.ev{--ink:#f1e4cc;--acc:#e2c288;--pt:47cqw;--pb:27cqw}
+.cok.ev{--ink:#eadfc8;--acc:#d9bc82;--pt:45cqw;--pb:27cqw}
+.mad.ev{--ink:#4a3118;--acc:#8a6420;--pt:53cqw;--pb:19cqw}
+.wed.ev{--ink:#5a3b36;--acc:#8f6334;--pt:45cqw;--pb:31cqw}
+/* footer: soft white paper */
+.count{background:#f8f5ef url(assets/paper-white.webp) center top/400px repeat;margin:0;padding:14cqw 6cqw 22cqw;box-shadow:inset 0 14px 22px -14px rgba(60,30,20,.18)}
+.cover{--pt:44cqw;--pb:27cqw}
