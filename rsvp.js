@@ -2,7 +2,7 @@
    Paste your deployed web-app URL below (see google-sheet/SETUP.md). */
 (function () {
   'use strict';
-  var RSVP_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzJnqxfDRPUrJAWa6Get7lWF0gRLc0FeZ530QFpieI7ByJTqwJqtSiTYjiDaGSVBOWcZQ/exec';
+  var RSVP_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwG4DDLzo4WH88SCxArIhF7b7notcIyTMovwCz61ebI1gCK-Hcy-H_GXUZtYuKUvtNBcg/exec';
 
   var form = document.getElementById('rsvpForm');
   if (!form) return;
@@ -59,8 +59,10 @@
       return;
     }
 
-    // text/plain + no-cors avoids a CORS preflight; Apps Script still receives the body
-    fetch(RSVP_ENDPOINT, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(d) })
+    // text/plain keeps this a "simple" request (no CORS preflight); Apps Script replies with JSON we can read
+    fetch(RSVP_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(d) })
+      .then(function (r) { return r.json(); })
+      .then(function (j) { if (!j || !j.ok) throw new Error((j && j.error) || 'rejected'); })
       .then(function () {
         setStatus('Thank you, ' + d.name.split(' ')[0] + '! Your RSVP has been received.');
         form.classList.add('is-sent');
