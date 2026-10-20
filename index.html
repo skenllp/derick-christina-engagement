@@ -51,8 +51,37 @@
 <section class="page ev cok reveal" aria-label="Cocktail Party"><div class="pi"><p class="lb">You are cordially invited</p><h2 class="tt">Cocktail Party</h2><p class="sb">An Exclusive Celebration</p><p class="vs">A night full of fun, games, disco and unforgettable memories.</p><p class="dt">Tuesday, 5 January 2027</p><p class="tm">5:00 PM</p><p class="lb">Venue</p><p class="vn">Cotton Tree</p><p class="ad">Achanpady</p><p class="lb">Dress Code</p><p class="dc">BLING</p><a class="btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=Cotton+Tree+Achanpady+Kerala">View Location</a></div></section>
 <section class="page ev mad reveal" aria-label="Madhuramveppu"><div class="pi"><p class="lb">Please join us for the traditional</p><h2 class="tt">Madhuramveppu</h2><p class="sb">A Celebration of Our Roots</p><p class="vs">Celebrating the sweetness of tradition, the warmth of family, and the vibrant spirit of Kerala.</p><i class="dv"></i><p class="dt">Thursday, 7 January 2027</p><p class="tm">6:00 PM</p><p class="vn">Mathew Kappil House</p><p class="ad">Kuttanad</p><p class="dc">Colourful Kerala Style</p><p class="lb">Dress Code</p><a class="btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=Kuttanad+Alappuzha+Kerala">View Location</a><p class="nt">Area search for Kuttanad — not the exact house location.</p></div></section>
 <section class="page ev wed reveal" aria-label="Wedding"><div class="pi"><h2 class="tt">Holy Matrimony</h2><p class="sb">We request the honour of your presence</p><div class="nm" aria-label="Derick Mathew and Christina Cherian">Derick Mathew<span class="amp">&amp;</span>Christina Cherian</div><i class="dv"></i><p class="lb">Saturday</p><p class="dt big">9 January 2027</p><div class="vb"><p class="lb">Wedding Ceremony</p><p class="tm">2:30 PM</p><p class="vn">St. Joseph Syro Malabar Church</p><p class="ad">Punnakunnam, Kuttanad, Alappuzha</p><a class="btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=St+Joseph+Syro+Malabar+Church+Punnakunnam+Kuttanad+Alappuzha">View Church Location</a></div><div class="vb"><p class="lb">Wedding Reception</p><p class="tm">6:00 PM</p><p class="vn">Vijaya International Convention Centre</p><p class="ad">Thiruvalla</p><a class="btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=Vijaya+International+Convention+Centre+Thiruvalla">View Reception Location</a></div></div></section>
+<section class="rsvp reveal" id="rsvp" aria-label="RSVP">
+  <form class="rsvp__card" id="rsvpForm" novalidate>
+    <p class="rsvp__eyebrow">The Celebrations</p>
+    <h2 class="rsvp__title">Kindly RSVP</h2>
+    <p class="rsvp__lead">We would be delighted to celebrate with you. Please select the events you will be attending.</p>
+
+    <label class="rsvp__label" for="rsvpName">Your name</label>
+    <input class="rsvp__input" id="rsvpName" name="name" type="text" placeholder="Full name" autocomplete="name" maxlength="80" required>
+    <input class="rsvp__hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+    <hr class="rsvp__rule">
+    <p class="rsvp__label rsvp__label--lg" id="rsvpEventsLbl">Which events will you join us for?</p>
+    <div class="rsvp__events" role="group" aria-labelledby="rsvpEventsLbl">
+      <div class="rsvp__ev"><label class="rsvp__chk"><input type="checkbox" name="event" value="Engagement"><span class="rsvp__box" aria-hidden="true"></span><span>Event 1 — Engagement</span></label><div class="rsvp__guests" hidden><label>Number of guests attending<select aria-label="Guests for Engagement"></select></label></div></div>
+      <div class="rsvp__ev"><label class="rsvp__chk"><input type="checkbox" name="event" value="Cocktail Party"><span class="rsvp__box" aria-hidden="true"></span><span>Event 2 — Cocktail Party</span></label><div class="rsvp__guests" hidden><label>Number of guests attending<select aria-label="Guests for Cocktail Party"></select></label></div></div>
+      <div class="rsvp__ev"><label class="rsvp__chk"><input type="checkbox" name="event" value="Madhuramveppu"><span class="rsvp__box" aria-hidden="true"></span><span>Event 3 — Madhuramveppu</span></label><div class="rsvp__guests" hidden><label>Number of guests attending<select aria-label="Guests for Madhuramveppu"></select></label></div></div>
+      <div class="rsvp__ev"><label class="rsvp__chk"><input type="checkbox" name="event" value="Wedding Ceremony"><span class="rsvp__box" aria-hidden="true"></span><span>Event 4 — Wedding Ceremony</span></label><div class="rsvp__guests" hidden><label>Number of guests attending<select aria-label="Guests for Wedding Ceremony"></select></label></div></div>
+      <div class="rsvp__ev"><label class="rsvp__chk"><input type="checkbox" name="event" value="Wedding Reception"><span class="rsvp__box" aria-hidden="true"></span><span>Event 5 — Wedding Reception</span></label><div class="rsvp__guests" hidden><label>Number of guests attending<select aria-label="Guests for Wedding Reception"></select></label></div></div>
+    </div>
+
+    <label class="rsvp__label" for="rsvpNote">A note for the couple (optional)</label>
+    <textarea class="rsvp__input rsvp__ta" id="rsvpNote" name="note" rows="3" maxlength="500" placeholder="Your blessings &amp; wishes..."></textarea>
+
+    <button class="rsvp__btn" id="rsvpBtn" type="submit">Send RSVP</button>
+    <p class="rsvp__status" id="rsvpStatus" role="status" aria-live="polite"></p>
+    <p class="rsvp__love">With love, Derick &amp; Christina</p>
+  </form>
+</section>
 <section class="count reveal"><p class="lb">Counting down to the ceremony</p><div class="cd" role="timer" aria-live="off"><div><b id="d">00</b><span>Days</span></div><div><b id="h">00</b><span>Hours</span></div><div><b id="m">00</b><span>Minutes</span></div><div><b id="s">00</b><span>Seconds</span></div></div><i class="dv"></i><h2 class="tt sc">Four Celebrations</h2><p class="sb">Countless Memories</p><p class="lb">One Beautiful Beginning</p><i class="dv"></i><p class="wd">We look forward to celebrating these beautiful moments with you.</p><p class="lb">With Love</p><p class="nm">Derick &amp; Christina</p></section>
 </main>
 <script src="script.js"></script>
+<script src="rsvp.js"></script>
 </body>
 </html>
