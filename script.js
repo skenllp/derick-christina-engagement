@@ -9,7 +9,7 @@
   var peek = document.getElementById('peek');
   var sealBtn = document.getElementById('sealBtn');
   var skipBtn = document.getElementById('skipBtn');
-  var RATIO = 1672 / 941;
+  var RATIO = 1563 / 941;   // cover artwork (assets/cards/hero.webp)
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ---- scroll reveals, started once the letter is showing ---- */
@@ -84,7 +84,11 @@
       var fly = document.createElement('div');
       fly.className = 'fly';
       fly.style.left = r.left + 'px'; fly.style.top = r.top + 'px';
-      fly.style.width = r.width + 'px'; fly.style.height = r.height + 'px';
+      /* start the flying letter only as tall as the part that is visible above the envelope front,
+         so nothing pops over the burgundy panel when it takes off */
+      var er = document.getElementById('env').getBoundingClientRect();
+      var visH = Math.max(40, Math.min(r.height, er.top + er.height * 0.385 - r.top));
+      fly.style.width = r.width + 'px'; fly.style.height = visH + 'px';
       document.body.appendChild(fly);
       scene.classList.add('is-flying');
       showDoc();
