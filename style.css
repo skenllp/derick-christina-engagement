@@ -94,10 +94,12 @@ html.is-locked,html.is-locked body{overflow:hidden}
 /* ================= CARDS ================= */
 .doc{display:none;width:min(100%,var(--col));margin:0 auto}
 .doc.is-open{display:block}
-.page{container-type:inline-size;position:relative;margin:0}
+.page{container-type:inline-size;position:relative;margin:0 auto;--r:1.84;
+  width:min(100%,calc(100vh/var(--r)));width:min(100%,calc(100svh/var(--r)));scroll-snap-align:center}
+html{scroll-snap-type:y proximity}
 
 /* cover = one image */
-.cover{aspect-ratio:941/1563;background:url("assets/cards/hero.webp") center/100% 100% no-repeat;--ink:#4a3028;--acc:#8a6a33;--hd:#773f50;--nmc:#773f50;--bgc:#efe8da}
+.cover{--r:1.661;aspect-ratio:941/1563;background:url("assets/cards/hero.webp") center/100% 100% no-repeat;--ink:#4a3028;--acc:#8a6a33;--hd:#55351F;--nmc:#55351F;--bgc:#efe8da}
 
 /* event cards = top cap + bottom cap + seamless middle that stretches with the content */
 .page.ev{--cap:68cqw;--bot:32cqw;background-repeat:no-repeat;background-position:top center,bottom center;background-size:100% auto,100% auto}
@@ -112,15 +114,16 @@ html.is-locked,html.is-locked body{overflow:hidden}
 .wed.ev::before{background-image:url("assets/cards/wedding-mid.webp")}
 
 /* per-card colour + text zone (--pt/--pb clear the artwork; --h = natural card height) */
-.eng{--ink:#f3e9d5;--acc:#e6d09b;--hd:#f5ebd7;--nmc:#e8d3a3;--bgc:#773f50;--pt:41cqw;--pb:28cqw;--h:172.5cqw}
-.cok{--ink:#f1ecd8;--acc:#efdfae;--hd:#f4eeda;--nmc:#ead9a6;--bgc:#6b7448;--pt:50cqw;--pb:26cqw;--h:182.5cqw}
-.mad{--ink:#38341e;--acc:#5b4418;--hd:#54532f;--nmc:#6f2f42;--bgc:#ddd9b8;--pt:53cqw;--pb:26cqw;--h:182.8cqw}
-.wed{--ink:#33242a;--acc:#46301a;--hd:#4b2230;--nmc:#4b2230;--bgc:#FBF2E3;--pt:60cqw;--pb:34cqw;--h:183.3cqw}
+.eng{--r:1.661;--ink:#f3e9d5;--acc:#e6d09b;--hd:#f5ebd7;--nmc:#e8d3a3;--bgc:#773f50;--pt:40cqw;--pb:27cqw;--h:172.5cqw}
+.cok{--r:1.661;--ink:#f1ecd8;--acc:#efdfae;--hd:#f4eeda;--nmc:#ead9a6;--bgc:#161514;--pt:50cqw;--pb:26cqw;--h:182.5cqw}
+.mad{--r:1.661;--ink:#38341e;--acc:#5b4418;--hd:#54532f;--nmc:#6f2f42;--bgc:#ddd9b8;--pt:53cqw;--pb:26cqw;--h:182.8cqw}
+.wed{--r:1.661;--ink:#33242a;--acc:#46301a;--hd:#4b2230;--nmc:#4b2230;--bgc:#FBF2E3;--pt:56cqw;--pb:22cqw;--h:183.3cqw}
 .wed.ev{--bot:38.8cqw}
 
 .pi{position:relative;z-index:1;width:72cqw;margin:0 auto;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:var(--ink);--g:1.6cqw}
 .cover .pi{height:100%;padding:36cqw 0 26cqw;--g:2.4cqw}
-.page.ev .pi{min-height:var(--h);padding:var(--pt) 0 var(--pb)}
+.page.ev{aspect-ratio:941/1563}
+.page.ev .pi{height:100%;padding:var(--pt) 0 var(--pb);--g:1cqw}
 .pi>*{margin:0}.pi>*+*{margin-top:var(--g)}
 
 /* type */
@@ -147,6 +150,31 @@ html.is-locked,html.is-locked body{overflow:hidden}
 .btn:hover,.btn:focus-visible{background:var(--acc);color:var(--bgc);outline:none}
 .eng .dt{margin-top:2.4cqw}
 .cover .tm{font-size:5cqw}
+
+
+/* ---- compact type so every event card fits the same 941x1563 frame as the cover ---- */
+.ev .lb{font-size:2.15cqw;letter-spacing:.26em}
+.ev .tt{font-size:5.6cqw}
+.ev .sb{font-size:3.5cqw}
+.ev .nm{font-size:7.6cqw;line-height:1.05}
+.ev .amp{font-size:3.6cqw;line-height:1.1}
+.ev .vs{font-size:2.8cqw;line-height:1.35;max-width:66cqw}
+.ev .vs b{font-size:1.9cqw;margin-top:.8cqw}
+.ev .dt{font-size:2.5cqw}.ev .dt.big{font-size:3.4cqw}
+.ev .tm{font-size:4.2cqw}
+.ev .vn{font-size:3.7cqw}
+.ev .ad{font-size:2.9cqw}
+.ev .dc{font-size:3cqw}
+.ev .btn{min-height:7.4cqw;margin-top:1cqw;padding:0 4cqw;font-size:1.9cqw}
+.ev .vb{gap:.6cqw;margin-top:2cqw}
+.eng .dt{margin-top:1cqw}
+.eng .nm{font-size:7.1cqw}
+.wed .pi{--g:.7cqw}
+.wed .vb{margin-top:1.4cqw}
+.wed .tm{font-size:3.7cqw}.wed .vn{font-size:3.2cqw}.wed .ad{font-size:2.7cqw}
+.wed .nm{font-size:7cqw}.wed .amp{font-size:3.2cqw}
+.wed .btn{min-height:6.4cqw;font-size:1.8cqw;margin-top:.6cqw}
+.wed .tt{font-size:5.2cqw}
 
 /* reveal: text fades up as each card arrives */
 .js .page.reveal .pi{opacity:0;transform:translateY(14px);transition:opacity 1s ease,transform 1s ease}
