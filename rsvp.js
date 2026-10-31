@@ -73,3 +73,35 @@
       .then(function () { btn.disabled = false; });
   });
 })();
+
+
+/* Cocktail Party RSVP (inside the cocktail card) -> same Google Sheet endpoint */
+(function () {
+  'use strict';
+  var RSVP_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwG4DDLzo4WH88SCxArIhF7b7notcIyTMovwCz61ebI1gCK-Hcy-H_GXUZtYuKUvtNBcg/exec';
+  var form = document.getElementById('cokForm');
+  if (!form) return;
+  var nameEl = document.getElementById('cokName');
+  var guestsEl = document.getElementById('cokGuests');
+  var btn = document.getElementById('cokBtn');
+  var statusEl = document.getElementById('cokStatus');
+  for (var i = 1; i <= 10; i++) { var o = document.createElement('option'); o.value = o.textContent = i; guestsEl.appendChild(o); }
+
+  function setStatus(msg, err) { statusEl.textContent = msg; statusEl.classList.toggle('is-error', !!err); }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var name = nameEl.value.trim();
+    if (!name) { setStatus('Please enter your name.', true); nameEl.focus(); return; }
+    if (form.elements.website.value) { setStatus('Thank you!'); return; } // honeypot
+    var events = {}; events['Cocktail Party'] = parseInt(guestsEl.value, 10) || 1;
+    var d = { name: name, events: events, note: '', website: '' };
+    btn.disabled = true; setStatus('Sending…');
+    fetch(RSVP_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(d) })
+      .then(function (r) { return r.json(); })
+      .then(function (j) { if (!j || !j.ok) throw new Error((j && j.error) || 'rejected'); })
+      .then(function () { setStatus('Thank you, ' + name.split(' ')[0] + '! Your RSVP has been received.'); form.reset(); })
+      .catch(function () { setStatus('Could not send. Please check your connection and try again.', true); })
+      .then(function () { btn.disabled = false; });
+  });
+})();
