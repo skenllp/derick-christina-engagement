@@ -47,6 +47,12 @@
     document.getElementById('m').textContent=p(Math.floor(s%3600/60));document.getElementById('s').textContent=p(s%60);}
   tick();setInterval(tick,1000);
 
+  var downBtn = document.getElementById('downBtn');
+  if (downBtn) downBtn.addEventListener('click', function () {
+    var next = document.querySelector('.page.cover').nextElementSibling;
+    if (next) next.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
+  });
+
   if (!scene || !doc || !sealBtn) { startReveals(); return; }
 
   root.classList.add('is-locked');

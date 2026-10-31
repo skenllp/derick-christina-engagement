@@ -15,7 +15,7 @@
   <meta name="twitter:image" content="https://derick-christina-engagement.vercel.app/assets/og-image.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Great+Vibes&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="assets/env-back.webp" type="image/webp">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -46,19 +46,19 @@
 
   <button id="music" type="button" hidden aria-label="Mute music" aria-pressed="false">♪</button><audio id="audio" loop preload="auto" autoplay playsinline></audio>
 <main class="doc" id="doc" tabindex="-1">
-<section class="page cover reveal" aria-label="Introduction"><div class="pi"><h1 class="tt sc">Four Celebrations</h1><p class="sb">One Beautiful Beginning</p><i class="dv"></i><p class="wd">We joyfully invite you to share celebrations as we begin our journey together.</p><p class="nm">Derick Mathew<span class="amp">&amp;</span>Christina Cherian</p></div></section>
+<section class="page cover reveal" aria-label="Introduction"><div class="pi"><h1 class="tt sc">Four Celebrations</h1><p class="sb">One Beautiful Beginning</p><i class="dv"></i><p class="wd">We joyfully invite you to share celebrations as we begin our journey together.</p><p class="nm">Derick Mathew<span class="amp">&amp;</span>Christina Cherian</p></div><button class="down" id="downBtn" type="button" aria-label="Scroll down to the celebrations"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9l7 7 7-7"/></svg></button></section>
 <section class="page ev eng reveal" aria-label="Engagement"><div class="pi"><p class="sb">A Ring, A Promise, A Lifetime of Love</p><h2 class="tt">Engagement</h2><p class="vs">“So they are no longer two, but one flesh. Therefore what God has joined together, let no one separate.”<b>Matthew 19:6</b></p><i class="dv"></i><p class="dt">Saturday, 2 January 2027</p><p class="tm">4:30 PM</p><div class="vb"><p class="lb">At</p><p class="vn">St. Thomas Syro-Malabar Church</p><p class="ad">Kottakkavu, North Paravur</p><a class="btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=St+Thomas+Syro+Malabar+Church+Kottakkavu+North+Paravur">View Church Location</a></div><div class="vb"><p class="lb">Reception</p><p class="tm">6:30 PM</p><p class="lb">At</p><p class="vn">One Kochi</p><p class="ad">Nedumbassery, Kochi</p><a class="btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=One+Kochi+Airport+Road+Nedumbassery">View Reception Location</a></div><p class="lb eng-dl">Dress Code</p><p class="dc">Ethnic Elegance</p></div></section>
-<section class="page ev cok reveal" aria-label="Cocktail Party"><div class="pi"><p class="sb"><span class="an">An</span> Exclusive Celebration</p><h2 class="tt">Cocktail Party</h2><p class="vs">A night full of fun, games, disco and unforgettable memories.</p><p class="dt">Tuesday, 5 January 2027</p><p class="tm">5:00 PM</p><p class="lb">At</p><p class="vn">Cotton Tree</p><p class="ad">Achanpady</p><a class="btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=Cotton+Tree+Achanpady+Kerala">View Location</a><p class="lb cok-dl">Dress Code</p><p class="dc">Glitz &amp; Glamour</p>
+<section class="page ev cok reveal" aria-label="Cocktail Party"><div class="pi"><p class="sb"><span class="an">An</span> Exclusive Celebration</p><h2 class="tt">Cocktail Party</h2><p class="vs">A night full of fun, games, disco and unforgettable memories.</p><p class="dt">Tuesday, 5 January 2027</p><p class="tm">5:00 PM</p><p class="lb cok-at">At</p><p class="vn">Cotton Tree</p><p class="ad">Achanpady</p><a class="btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=Cotton+Tree+Achanpady+Kerala">View Location</a><div class="cok-dw"><p class="lb cok-dl">Dress Code</p><p class="dc">Glitz &amp; Glamour</p></div>
 <div class="rv">
   <div class="rv__div" aria-hidden="true"><i></i><b class="rv__star" aria-hidden="true"></b><i></i></div>
   <form class="rv__form" id="cokForm" novalidate>
     <h3 class="rv__title">RSVP</h3>
     <div class="rv__orn" aria-hidden="true"><i></i><b class="rv__star" aria-hidden="true"></b><i></i></div>
-    <label class="rv__lb" for="cokName">Your name</label>
-    <input class="rv__in" id="cokName" name="name" type="text" placeholder="Enter your name" autocomplete="name" maxlength="80" required>
+    <div class="rv__row"><div class="rv__field"><label class="rv__lb" for="cokName">Your name</label>
+    <input class="rv__in" id="cokName" name="name" type="text" placeholder="Enter your name" autocomplete="name" maxlength="80" required></div>
     <input class="rv__hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-    <label class="rv__lb" for="cokGuests">Number of guests attending</label>
-    <select class="rv__in rv__sel" id="cokGuests" name="guests"></select>
+    <div class="rv__field"><label class="rv__lb" for="cokGuests" aria-label="Number of guests attending">Guests</label>
+    <select class="rv__in rv__sel" id="cokGuests" name="guests" aria-label="Number of guests attending"></select></div></div>
     <button class="btn rv__btn" id="cokBtn" type="submit">Confirm Attendance</button>
     <p class="rv__status" id="cokStatus" role="status" aria-live="polite"></p>
   </form>
