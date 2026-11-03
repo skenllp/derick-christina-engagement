@@ -41,7 +41,7 @@
   evs.forEach(function(e){window.addEventListener(e,startMusic,{capture:true,passive:true});});
   startMusic();
   mb.addEventListener('click',function(){var m=!au.muted;au.muted=m;mb.setAttribute('aria-pressed',m);mb.setAttribute('aria-label',m?'Unmute music':'Mute music');if(!m&&au.paused)au.play().catch(function(){});});
-  var T=new Date('2027-01-09T14:30:00+05:30').getTime(),p=function(n){return String(n).padStart(2,'0')};
+  var T=new Date('2027-01-02T16:30:00+05:30').getTime(),p=function(n){return String(n).padStart(2,'0')};
   function tick(){var s=Math.floor(Math.max(0,T-Date.now())/1e3);
     document.getElementById('d').textContent=p(Math.floor(s/86400));document.getElementById('h').textContent=p(Math.floor(s%86400/3600));
     document.getElementById('m').textContent=p(Math.floor(s%3600/60));document.getElementById('s').textContent=p(s%60);}
