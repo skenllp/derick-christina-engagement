@@ -9,7 +9,7 @@
   var peek = document.getElementById('peek');
   var sealBtn = document.getElementById('sealBtn');
   var skipBtn = document.getElementById('skipBtn');
-  var RATIO = 1563 / 941;   // cover artwork (assets/cards/hero.webp)
+  var RATIO = 1600 / 947;   // cover artwork (assets/cards/hero.webp)
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ---- scroll reveals, started once the letter is showing ---- */
